@@ -21,18 +21,18 @@ A starter full-stack project based on the user's 11-slide presentation. Frontend
 Windows 11, Python 3.11+, Git (optional), Ollama for stories, Piper for voice, FFmpeg for video. For 8 GB RAM, close heavy applications while running local models.
 
 ## Local setup (PowerShell)
-1. Open PowerShell and move to the folder where you extracted this repository:
+1. Open PowerShell and move to the project folder:
    `cd path\\to\\SeekhToon-AI-Studio`
 2. Create a virtual environment:
    `py -3.11 -m venv .venv`
    `.\.venv\\Scripts\\Activate.ps1`
    If script execution is blocked for this terminal only: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
 3. Install backend dependencies:
-   `cd backend`
-   `pip install -r requirements.txt`
+   `pip install -r backend\\requirements.txt`
 4. Copy environment template:
    `Copy-Item .env.example .env`
 5. Start backend:
+   `cd backend`
    `uvicorn app.main:app --reload --host 127.0.0.1 --port 8000`
 6. Open a second PowerShell terminal, go to the frontend folder and run:
    `cd path\\to\\SeekhToon-AI-Studio\\frontend`

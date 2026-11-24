@@ -1,11 +1,17 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "data"
-UPLOAD_DIR = BASE_DIR / "uploads"
-OUTPUT_DIR = BASE_DIR / "outputs"
-for folder in (DATA_DIR, UPLOAD_DIR, OUTPUT_DIR):
+BACKEND_DIR = Path(__file__).resolve().parents[1]
+PROJECT_DIR = BACKEND_DIR.parent
+load_dotenv(PROJECT_DIR / ".env")
+
+DATA_DIR = BACKEND_DIR / "data"
+GENERATED_DIR = BACKEND_DIR / "generated"
+MODELS_DIR = PROJECT_DIR / "models"
+UPLOAD_DIR = PROJECT_DIR / "uploads"
+OUTPUT_DIR = PROJECT_DIR / "outputs"
+for folder in (DATA_DIR, GENERATED_DIR, MODELS_DIR, UPLOAD_DIR, OUTPUT_DIR):
     folder.mkdir(parents=True, exist_ok=True)
 
 APP_NAME = "SeekhToon AI Studio"

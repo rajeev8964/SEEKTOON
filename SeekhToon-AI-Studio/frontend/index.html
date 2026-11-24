@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SeekhToon AI Studio</title><link rel="stylesheet" href="style.css">
+<title>SeekhToon AI Studio</title><link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <aside class="sidebar">
@@ -42,5 +42,5 @@
 <section id="characters" class="page"><div class="panel"><h2>Character Studio</h2><p>Save reusable character descriptions for your stories.</p><label>Character name<input id="charName" placeholder="Mittu the rabbit"></label><label>Description<textarea id="charDesc" rows="3" placeholder="Appearance, clothes, personality..."></textarea></label><label>Art style<input id="charStyle" value="2D cartoon"></label><button class="primary" id="charBtn">Save character</button><div id="charList" class="result">Loading characters...</div></div></section>
 <section id="video" class="page"><div class="panel"><h2>Video Generator</h2><p>Assemble uploaded scene images into an MP4 slideshow using FFmpeg.</p><label>Uploaded image filenames (comma separated)<input id="videoImages" placeholder="image1.png,image2.jpg"></label><label>Optional audio filename<input id="videoAudio" placeholder="narration.wav"></label><label>Seconds per image<input id="videoSeconds" type="number" min="1" max="20" value="4"></label><button class="primary" id="videoBtn">Create MP4</button><div id="videoResult" class="result">Video output will appear here.</div></div></section>
 <footer>SeekhToon AI Studio <span>Local development build · v0.1</span></footer>
-</main><script src="app.js"></script>
+</main><script src="js/app.js"></script>
 </body></html>

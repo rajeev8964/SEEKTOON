@@ -1,7 +1,14 @@
 .venv/
 __pycache__/
 *.pyc
+.env
 backend/.env
 backend/data/
-backend/uploads/*
-backend/outputs/*
+backend/generated/*
+!backend/generated/.gitkeep
+models/*
+!models/.gitkeep
+uploads/*
+!uploads/.gitkeep
+outputs/*
+!outputs/.gitkeep
