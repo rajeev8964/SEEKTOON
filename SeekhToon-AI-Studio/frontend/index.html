@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeekhToon AI Studio</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="logo">S</span><div><b>SeekhToon</b><small>AI Studio</small></div></div>
+  <nav>
+    <button class="nav active" data-page="dashboard">▦ Dashboard</button>
+    <button class="nav" data-page="story">✎ Story Generator</button>
+    <button class="nav" data-page="voice">♫ Voice Studio</button>
+    <button class="nav" data-page="image">✧ Image Generator</button>
+    <button class="nav" data-page="editor">▧ Photo Editor</button>
+    <button class="nav" data-page="characters">♙ Character Studio</button>
+    <button class="nav" data-page="video">▶ Video Generator</button>
+  </nav>
+  <div class="side-note">Create stories.<br>Bring them to life.</div>
+</aside>
+<main>
+<header><div><span class="eyebrow">CREATIVE WORKSPACE</span><h1 id="heading">Dashboard</h1></div><span class="status"><i></i> Local studio</span></header>
+<section id="dashboard" class="page show">
+  <div class="hero"><div><span class="eyebrow">WELCOME TO YOUR STORY WORLD</span><h2>Turn your ideas into<br><em>magical stories.</em></h2><p>Write Hindi stories, create narration and prepare cartoon scenes in one workspace.</p><button class="primary" onclick="showPage('story')">Create a story <b>→</b></button></div><div class="hero-art">✦<div class="planet">📖</div><span>कहानी</span></div></div>
+  <h3>Creative tools</h3><div class="cards">
+    <article onclick="showPage('story')"><b class="ico">✎</b><h3>Story Generator</h3><p>Create child-friendly Hindi stories with AI.</p></article>
+    <article onclick="showPage('voice')"><b class="ico">♫</b><h3>Voice Studio</h3><p>Convert your script into narration.</p></article>
+    <article onclick="showPage('image')"><b class="ico">✧</b><h3>Image Generator</h3><p>Create cartoon scene illustrations.</p></article>
+    <article onclick="showPage('characters')"><b class="ico">♙</b><h3>Character Studio</h3><p>Save character descriptions for reuse.</p></article>
+  </div>
+  <div class="notice"><b>Development note</b><p>Some tools require local AI models or provider API credentials. The interface reports when a service is not configured.</p></div>
+</section>
+<section id="story" class="page">
+ <div class="panel"><h2>AI Story Generator</h2><p>Generate a simple, child-friendly story in Hindi.</p>
+ <label>Story topic<input id="topic" placeholder="जैसे: ईमानदार लकड़हारा"></label>
+ <div class="two"><label>Age group<select id="age"><option>5-10 years</option><option>8-12 years</option><option>13+ years</option></select></label><label>Moral<input id="moral" value="Be kind and honest"></label></div>
+ <button class="primary" id="storyBtn">Generate story</button><div id="storyResult" class="result">Your generated story will appear here.</div></div>
+</section>
+<section id="voice" class="page"><div class="panel"><h2>Voice Studio</h2><p>Generate WAV narration with a configured Piper voice.</p><label>Story / narration<textarea id="voiceText" rows="7" placeholder="अपनी हिंदी कहानी यहाँ लिखें..."></textarea></label><button class="primary" id="voiceBtn">Generate voice</button><div id="voiceResult" class="result">Audio output will appear here.</div></div></section>
+<section id="image" class="page"><div class="panel"><h2>AI Image Generator</h2><p>Create an illustration using a configured Hugging Face image model.</p><label>Image prompt<textarea id="imagePrompt" rows="4" placeholder="A friendly little rabbit in a colorful forest, 2D children's cartoon..."></textarea></label><button class="primary" id="imageBtn">Generate image</button><div id="imageResult" class="result">Generated image will appear here.</div></div></section>
+<section id="editor" class="page"><div class="panel"><h2>AI Photo Editor – Upload Preview</h2><p>Upload and preview an image. AI editing endpoint is a future integration.</p><label>Choose image<input type="file" id="photo" accept="image/png,image/jpeg,image/webp"></label><div id="photoResult" class="result">Image preview will appear here.</div></div></section>
+<section id="characters" class="page"><div class="panel"><h2>Character Studio</h2><p>Save reusable character descriptions for your stories.</p><label>Character name<input id="charName" placeholder="Mittu the rabbit"></label><label>Description<textarea id="charDesc" rows="3" placeholder="Appearance, clothes, personality..."></textarea></label><label>Art style<input id="charStyle" value="2D cartoon"></label><button class="primary" id="charBtn">Save character</button><div id="charList" class="result">Loading characters...</div></div></section>
+<section id="video" class="page"><div class="panel"><h2>Video Generator</h2><p>Assemble uploaded scene images into an MP4 slideshow using FFmpeg.</p><label>Uploaded image filenames (comma separated)<input id="videoImages" placeholder="image1.png,image2.jpg"></label><label>Optional audio filename<input id="videoAudio" placeholder="narration.wav"></label><label>Seconds per image<input id="videoSeconds" type="number" min="1" max="20" value="4"></label><button class="primary" id="videoBtn">Create MP4</button><div id="videoResult" class="result">Video output will appear here.</div></div></section>
+<footer>SeekhToon AI Studio <span>Local development build · v0.1</span></footer>
+</main><script src="app.js"></script>
+</body></html>
